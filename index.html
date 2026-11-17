@@ -706,6 +706,30 @@ html.prb #pb img,html.prb #pb video,html.prb #pb .fbs,html.prb #lb img,html.prb 
 #prt button{margin-top:12px;border:2.5px solid #14141f;border-radius:999px;background:#ffd93b;font:800 14px var(--h);padding:5px 16px;box-shadow:2px 2px 0 #14141f}
 @media print{body>*{display:none!important}body::after{content:"© vanessa.zip — printing is disabled. Please contact Vanessa for a copy.";display:block;padding:40vh 10vw;text-align:center;font:700 20px sans-serif}}
 /*PRTE*/
+/*HCV*/.hrt{display:flex;align-items:center;gap:10px}.hrt .lang{margin:0}.hrt .btns{margin-left:2px}
+.hcv{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px 0 5px;border:2px solid #14141f;border-radius:999px;background:#ffd93b;color:#14141f;font:800 14px var(--h);text-decoration:none;box-shadow:2px 2px 0 #14141f;transition:transform .2s cubic-bezier(.3,1.7,.5,1)}
+.hcv:hover{transform:translateY(-2px) rotate(-2deg)}.hcv i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fff;border:1.5px solid #14141f;font-style:normal;font-size:11px}
+@media(max-width:620px){.hrt{gap:6px}.hcv{height:28px;padding:0 10px;font-size:12.5px}.hcv i{display:none}}@media(max-width:400px){header .hrt .btns{display:none}}/*HCVE*/
+/*FP*/.fps{margin:44px 0 10px;min-width:0}
+.fph{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:0 6px;margin-bottom:18px}
+.fph b{font:900 22px var(--h);background:#ffd93b;border:2.5px solid #14141f;border-radius:999px;padding:4px 16px;box-shadow:3px 3px 0 #14141f;transform:rotate(-1.5deg)}
+.fph span{font:600 14px var(--f);color:#5b6078}
+.fpw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding:4px 6px 10px}
+.fpc{position:relative;display:flex;flex-direction:column;min-height:380px;padding:18px 18px 0;border:3px solid #14141f;border-radius:26px;background:var(--c);color:#fff;text-decoration:none;overflow:hidden;box-shadow:6px 6px 0 #14141f;transform:rotate(var(--q));transition:transform .35s cubic-bezier(.3,1.6,.5,1),box-shadow .35s}
+.fpc::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 12%,rgba(255,255,255,.28) 0 18%,transparent 19%),radial-gradient(circle at 10% 60%,rgba(255,255,255,.12) 0 14%,transparent 15%);pointer-events:none}
+.fpc:hover{transform:rotate(calc(var(--q)*-1.6)) translateY(-6px);box-shadow:9px 11px 0 #14141f;z-index:2}
+.fpct{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.fpn{font:900 13px var(--h);background:#14141f;color:#fff;border-radius:999px;padding:3px 10px}
+.fpg{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px}.fpg i{font:800 11px var(--h);font-style:normal;background:rgba(255,255,255,.95);color:#14141f;border:2px solid #14141f;border-radius:999px;padding:2px 8px}
+.fpc h4{position:relative;margin:16px 0 6px;font:900 clamp(24px,2.4vw,32px)/1.02 var(--h);letter-spacing:-.02em;text-shadow:3px 3px 0 #14141f;-webkit-text-stroke:1.2px #14141f}
+.fpc p{position:relative;margin:0 0 12px;font:600 13.5px/1.45 var(--f);color:rgba(255,255,255,.95);max-width:26ch}
+.fpv2{position:relative;align-self:flex-start;font:800 13px var(--h);background:#fff;color:#14141f;border:2.5px solid #14141f;border-radius:999px;padding:4px 12px;box-shadow:2px 2px 0 #14141f;transition:transform .25s}
+.fpc:hover .fpv2{transform:translateX(4px) rotate(-3deg)}
+.fpi{position:relative;margin:auto -6px 0;height:150px}
+.fpi img{position:absolute;left:4%;right:4%;top:22px;width:92%;height:200px;object-fit:cover;border:3px solid #14141f;border-radius:16px;box-shadow:0 -4px 0 rgba(20,20,31,.25);transform:rotate(calc(var(--q)*-2));transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.fpc:hover .fpi img{transform:translateY(-34px) rotate(calc(var(--q)*1.5)) scale(1.03)}
+@media(max-width:1100px){.fpw{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.fps{margin-top:34px}.fph b{font-size:18px}.fpw{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:6px 6px 16px;margin:0 -6px}.fpc{flex:0 0 78%;scroll-snap-align:center;min-height:340px}.fpi img{height:180px}}/*FPE*/
 @keyframes gd{to{background-position:26px 26px,26px 26px}}
 @keyframes fl{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-16px) rotate(calc(var(--r,0deg) + 10deg))}}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
@@ -775,7 +799,7 @@ L.addEventListener("click",function(){if(!boomed){boomed=1;clearInterval(spT)}fi
 <symbol id="cu" viewBox="0 0 48 48"><path d="M10 4V37L18 30 24 43 30 40 24 28 35 28Z"/></symbol>
 <filter id="puff" x="-5%" y="-10%" width="110%" height="125%"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="13" xChannelSelector="R" yChannelSelector="G"/></filter>
 </defs></svg>
-<header><h1><svg class="hlogo" viewBox="0 0 40 30" aria-hidden="true"><path d="M11 27h19a7.5 7.5 0 0 0 .9-14.9A10 10 0 0 0 12 10.3 8.4 8.4 0 0 0 11 27z" fill="#fff" stroke="#14141f" stroke-width="3" stroke-linejoin="round"/><path d="M16.2 19.6q1.4-1.8 2.8 0M22 19.6q1.4-1.8 2.8 0" fill="none" stroke="#14141f" stroke-width="1.4" stroke-linecap="round"/><path d="M18.8 21.6q1.7 1.9 3.4 0" fill="none" stroke="#14141f" stroke-width="1.3" stroke-linecap="round"/><ellipse cx="14.3" cy="22" rx="1.6" ry="1" fill="#ff9ec3"/><ellipse cx="26.7" cy="22" rx="1.6" ry="1" fill="#ff9ec3"/></svg>vanessa.zip</h1><button class="lang" id="lg" aria-label="Language"><span data-l="en">EN</span><span data-l="vn">VN</span></button><div class="btns"></div></header>
+<header><h1><svg class="hlogo" viewBox="0 0 40 30" aria-hidden="true"><path d="M11 27h19a7.5 7.5 0 0 0 .9-14.9A10 10 0 0 0 12 10.3 8.4 8.4 0 0 0 11 27z" fill="#fff" stroke="#14141f" stroke-width="3" stroke-linejoin="round"/><path d="M16.2 19.6q1.4-1.8 2.8 0M22 19.6q1.4-1.8 2.8 0" fill="none" stroke="#14141f" stroke-width="1.4" stroke-linecap="round"/><path d="M18.8 21.6q1.7 1.9 3.4 0" fill="none" stroke="#14141f" stroke-width="1.3" stroke-linecap="round"/><ellipse cx="14.3" cy="22" rx="1.6" ry="1" fill="#ff9ec3"/><ellipse cx="26.7" cy="22" rx="1.6" ry="1" fill="#ff9ec3"/></svg>vanessa.zip</h1><div class="hrt"><div class="hrt"><div class="hrt"><div class="hrt"><!--hcv--><a class="hcv" href="cv/Vanessa_Nguyen_Van_Anh_CV.pdf" download target="_blank" rel="noopener" aria-label="download CV"><i>⬇</i><span data-en="CV" data-vn="CV">CV</span></a><!--/hcv--><button class="lang" id="lg" aria-label="Language"><span data-l="en">EN</span><span data-l="vn">VN</span></button><div class="btns"></div></div></header>
 <div class="sb"><i></i></div>
 <main>
 <div class="dc" id="dc"></div>
@@ -884,7 +908,7 @@ L.addEventListener("click",function(){if(!boomed){boomed=1;clearInterval(spT)}fi
         <path class="cls-17" d="M555.47,426.77c5.81,34.84-7.74,47.42-40.65,37.74M558.37,444.19c27.1,19.35,45.48,15.48,55.16-11.61"/>
       </g></svg></div></div><!--/hd--><!--abpb--><div class="abp"><b class="t1" data-en="branding" data-vn="branding">branding</b><b class="t2" data-en="illustration" data-vn="illustration">illustration</b><b class="t3" data-en="logo" data-vn="logo">logo</b><b class="t4" data-en="mascot" data-vn="mascot">mascot</b></div></div></section>
 <section class="win" id="works" style="--c:var(--red)"><div class="tb"><b>WORKS</b><div class="btns"></div></div><div class="tabs" id="tabs"></div><div class="grid" id="grid"></div></section>
-<section class="win wct" style="--c:var(--blue)"><div class="tb"><b>CONTACT</b><div class="btns"></div></div><div class="ct"><div><mark>#itsmevananh</mark> <mark>#vanessaportfolio</mark><br><mark data-i="h1">#letsworktogether</mark><p><span data-i="jobs">open for branding, illustration &amp; logo jobs</span> ♥</p><div class="ap-links ctl"><a href="https://web.facebook.com/itsmevananh" target="_blank" rel="noopener" style="--c:#8ad0ff;--d:0.0s"><i>f</i><b>Facebook</b><span>↗</span></a><a href="https://www.linkedin.com/in/itsmevananh/" target="_blank" rel="noopener" style="--c:#c9b6ff;--d:-0.6s"><i>in</i><b>LinkedIn</b><span>↗</span></a><a href="https://www.behance.net/vart606" target="_blank" rel="noopener" style="--c:#ffd93b;--d:-1.2s"><i>Bē</i><b>Behance</b><span>↗</span></a></div><!--cv48--><a class="cvb cvc" href="cv/Vanessa_Nguyen_Van_Anh_CV.pdf" download target="_blank" rel="noopener"><i>⬇</i><span data-en="download my CV" data-vn="tải CV của mình">download my CV</span><small>PDF</small></a><!--/cv48--></div><div class="cl"><div class="fd"><svg class="fsv" viewBox="0 0 1419.27 1170.09" overflow="visible">
+<section class="win wct" style="--c:var(--blue)"><div class="tb"><b>CONTACT</b><div class="btns"></div></div><div class="ct"><div><mark>#itsmevananh</mark> <mark>#vanessaportfolio</mark><br><mark data-i="h1">#letsworktogether</mark><p><span data-i="jobs">open for branding, illustration &amp; logo jobs</span> ♥</p><div class="ap-links ctl"><a href="https://web.facebook.com/itsmevananh" target="_blank" rel="noopener" style="--c:#8ad0ff;--d:0.0s"><i>f</i><b>Facebook</b><span>↗</span></a><a href="https://www.linkedin.com/in/itsmevananh/" target="_blank" rel="noopener" style="--c:#c9b6ff;--d:-0.6s"><i>in</i><b>LinkedIn</b><span>↗</span></a><a href="https://www.behance.net/vart606" target="_blank" rel="noopener" style="--c:#ffd93b;--d:-1.2s"><i>Bē</i><b>Behance</b><span>↗</span></a></div></div><div class="cl"><div class="fd"><svg class="fsv" viewBox="0 0 1419.27 1170.09" overflow="visible">
     <g>
       <g>
         <path class="fc-8" d="M852.57,681.39c34.84,29.03,90,63.87,110.32,110.32,31.94,75.48-52.26,113.23-107.42,63.87l-63.87-63.87,60.97-110.32Z"/>
@@ -1509,5 +1533,7 @@ function deco(){if(!pb)return;pb.querySelectorAll('video:not([data-src])').forEa
 if(!pb.querySelector('.cpy')&&pb.children.length){const c=document.createElement('p');c.className='cpy';c.innerHTML=isvn()?'<b>© vanessa.zip</b> · Hình ảnh chỉ dùng để giới thiệu portfolio. Vui lòng không sao chép hoặc sử dụng lại khi chưa được phép.':'<b>© vanessa.zip</b> · Artwork shown for portfolio purposes only. Please don’t copy or reuse without permission.';pb.appendChild(c)}}
 new MutationObserver(()=>requestAnimationFrame(deco)).observe(pb,{childList:true});})();
 /*PRTJE*/
+/*FPJ*/document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('.fpc,.fpt');if(!a)return;e.preventDefault();op(a.dataset.p)});
+/*FPJE*/
 $('#eye').onclick=function(){const h=ov.classList.toggle('nh'),s=this.querySelector('span');this.setAttribute('aria-pressed',!h);s.dataset.en=h?'show notes':'hide notes';s.dataset.vn=h?'hiện ghi chú':'ẩn ghi chú';s.textContent=s.dataset[lang]};
 </script></body></html>
