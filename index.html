@@ -589,6 +589,8 @@ html.prb #pb img,html.prb #pb video,html.prb #pb .fbs,html.prb #lb img,html.prb 
 .lgv img{display:block;height:auto;max-height:clamp(70px,13vw,130px);max-width:min(46%,340px);object-fit:contain;filter:none}
 .lgv img:first-child{max-height:clamp(50px,8vw,90px)}
 .lgo:has(>.sn){flex-direction:column!important;align-items:center!important}.lgo>.sn{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;display:table;margin:10px auto 0;max-width:min(250px,80%)}/*LGVE*/
+/*FLP*/@media(hover:none),(max-width:820px){.fbw{animation:none!important}.fbs{touch-action:pan-y}.fbs .leaf{display:none!important}}
+.leaf{will-change:transform}.face{transform:translateZ(0)}.lback{transform:rotateY(180deg) translateZ(0)}/*FLPE*/
 @keyframes gd{to{background-position:26px 26px,26px 26px}}
 @keyframes fl{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-16px) rotate(calc(var(--r,0deg) + 10deg))}}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
@@ -1297,5 +1299,22 @@ function deco(){if(!pb)return;pb.querySelectorAll('video').forEach(v=>{v.setAttr
 if(!pb.querySelector('.cpy')&&pb.children.length){const c=document.createElement('p');c.className='cpy';c.innerHTML=isvn()?'<b>© vanessa.zip</b> · Hình ảnh chỉ dùng để giới thiệu portfolio. Vui lòng không sao chép hoặc sử dụng lại khi chưa được phép.':'<b>© vanessa.zip</b> · Artwork shown for portfolio purposes only. Please don’t copy or reuse without permission.';pb.appendChild(c)}}
 new MutationObserver(()=>requestAnimationFrame(deco)).observe(pb,{childList:true});})();
 /*PRTJE*/
+/*FLPJ*/(function(){const IF=initFlips,touch=()=>matchMedia('(hover:none),(max-width:820px)').matches;
+initFlips=function(){IF();pb.querySelectorAll('.flip').forEach(fl=>{const S=[...fl.querySelectorAll('.fsrc img')].map(i=>i.src);S.forEach(s=>{const im=new Image();im.decoding='async';im.src=s});
+if(!touch())return;
+let fs=fl.querySelector('.fbs');const nf=fs.cloneNode(true);fs.replaceWith(nf);fs=nf;
+const q=s=>fl.querySelector(s),iL=q('.pl img'),iR=q('.pr img'),ct=q('.fct'),bp=q('.fprev'),bn=q('.fnext'),NM=(fl.dataset.labels||'').split('|');let i=0,busy=false;
+const upd=()=>{iL.src=S[i];iR.src=S[i];ct.textContent=(/^\d/.test(NM[i]||'')?'p. ':'')+(NM[i]||'');bp.disabled=i==0;bn.disabled=i==S.length-1;fl.classList.toggle('c0',i==0);fl.classList.toggle('cN',i==S.length-1)};
+const ready=src=>{const im=new Image();im.src=src;return (im.decode?im.decode():Promise.resolve()).catch(()=>{})};
+const go=d=>{const j=i+d;if(busy||j<0||j>=S.length)return;busy=true;
+const out=fs.animate([{opacity:1,transform:'translateX(0) scale(1)'},{opacity:0,transform:'translateX('+(-d*28)+'px) scale(.98)'}],{duration:170,easing:'ease-in',fill:'forwards'});
+Promise.all([ready(S[j]),out.finished]).then(()=>{i=j;upd();out.cancel();
+fs.animate([{opacity:0,transform:'translateX('+(d*28)+'px) scale(.98)'},{opacity:1,transform:'translateX(0) scale(1)'}],{duration:230,easing:'cubic-bezier(.2,.8,.3,1)'}).finished.then(()=>{busy=false})})};
+fl._go=go;bp.onclick=()=>go(-1);bn.onclick=()=>go(1);
+fs.addEventListener('click',e=>{const r=fs.getBoundingClientRect();go(e.clientX<r.left+r.width/2?-1:1)});
+let x0=0,y0=0;fs.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+fs.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){e.preventDefault();go(dx<0?1:-1)}});
+upd()})}})();
+/*FLPJE*/
 $('#eye').onclick=function(){const h=ov.classList.toggle('nh'),s=this.querySelector('span');this.setAttribute('aria-pressed',!h);s.dataset.en=h?'show notes':'hide notes';s.dataset.vn=h?'hiện ghi chú':'ẩn ghi chú';s.textContent=s.dataset[lang]};
 </script></body></html>
