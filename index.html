@@ -491,9 +491,9 @@ html.ld body{overflow:hidden}html.ld #dog{visibility:hidden}html.ldz .scs,html.l
 .ldil{position:absolute;inset:0;z-index:0;pointer-events:none}.ldil.fr{z-index:2}
 .ldi{position:absolute;left:0;top:0;width:var(--z);height:var(--z);margin:calc(var(--z)/-2) 0 0 calc(var(--z)/-2);display:grid;place-items:center;opacity:0;will-change:transform,opacity}
 .ldi svg{width:100%;height:100%;display:block;overflow:visible}
-.p2{display:none}#ldr.bm .p1{display:none}#ldr.bm .p2{display:inline}
-.pw1,.hd1,.ear1,.ex1,.bd2,.fc2,.sm2,.mk2,.lt1,.kb1{transform-box:fill-box}
-.pl{transform-origin:50% 100%;animation:ltyp .2s steps(1,end) infinite}.pr{transform-origin:50% 100%;animation:ltyp .2s steps(1,end) -.1s infinite}
+#ldr .p2{display:none}#ldr.bm .p1{display:none}#ldr.bm .p2{display:inline}
+#ldr :is(.pw1,.hd1,.ear1,.ex1,.bd2,.fc2,.sm2,.mk2,.lt1,.kb1){transform-box:fill-box}
+#ldr .pl{transform-origin:50% 100%;animation:ltyp .2s steps(1,end) infinite}#ldr .pr{transform-origin:50% 100%;animation:ltyp .2s steps(1,end) -.1s infinite}
 @keyframes ltyp{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(-4deg)}}
 .hd1{transform-origin:50% 100%;animation:lhb .4s steps(1,end) infinite}@keyframes lhb{50%{transform:translateY(6px) rotate(.6deg)}}
 .ear1{transform-origin:50% 0;animation:lear .4s steps(1,end) -.2s infinite}@keyframes lear{50%{transform:scaleY(.96) translateY(4px)}}
